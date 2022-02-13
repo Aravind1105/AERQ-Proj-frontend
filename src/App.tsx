@@ -6,16 +6,16 @@ import "./App.css";
 import GameType from "./components/GameType";
 import StartGame from "./components/StartGame";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path={Paths.GAME_TYPE} element={<GameType />} />
-        <Route path={Paths.GAME_START} element={<StartGame />} />
+        <Route path={`${Paths.GAME_START}/:type`} element={<StartGame />} />
         <Route path="*" element={<Navigate to={Paths.GAME_TYPE} />} />
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
