@@ -3,14 +3,26 @@ export const Paths = {
   GAME_START: "/game/start",
 };
 
-export const Types = {
-  PLAYER_VS_COMP: "playvscomp",
-  COMP_VS_COMP: "compvscomp",
+export const Variables = {
+  PLAYER_VS_COMP: {
+    type: "playvscomp",
+    players: {
+      play1: "Player",
+      play2: "Computer",
+    },
+  },
+  COMP_VS_COMP: {
+    type: "compvscomp",
+    players: {
+      play1: "Computer 1",
+      play2: "Computer 2",
+    },
+  },
 };
 
 export const Options = {
-  ROCK: "rock",
-  PAPER: "paper",
-  SCISSOR: "scissor",
-  PENCIL: "pencil",
+  ROCK: "ROCK",
+  PAPER: "PAPER",
+  SCISSOR: "SCISSOR",
+  PENCIL: "PENCIL",
 };

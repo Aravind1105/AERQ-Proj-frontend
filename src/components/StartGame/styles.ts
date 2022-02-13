@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  //   margin: 10px;
+  margin: 20px;
 `;
 
 export const Card = styled.div`
@@ -40,7 +40,7 @@ export const CardContainer = styled.div`
 `;
 
 export const Button = styled.button`
-  background: black;
+  background: dodgerblue;
   color: white;
   border: 0;
   text-align: center;

@@ -8,8 +8,8 @@ export const gameResult = async (
 ): Promise<ResultResponse> => {
   const url: string = new urlBuilder()
     .path("api/getResult")
-    .param("val1", firstValue)
-    .param("val2", secondValue)
+    .param("play1", firstValue)
+    .param("play2", secondValue)
     .build();
 
   try {
@@ -17,6 +17,6 @@ export const gameResult = async (
     return response;
   } catch (error) {
     console.error(error);
-    return;
+    return null;
   }
 };

@@ -1,17 +1,17 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Container, Header, Button } from "./styles";
-import { Paths, Types } from "../../constants";
+import { Paths, Variables } from "../../constants";
 
 const GameType: FC = () => {
   const navigate = useNavigate();
 
   const startGame = (PlayVsComp: boolean) => {
     if (PlayVsComp) {
-      navigate(`${Paths.GAME_START}/${Types.PLAYER_VS_COMP}`);
+      navigate(`${Paths.GAME_START}/${Variables.PLAYER_VS_COMP.type}`);
     } else {
-      navigate(`${Paths.GAME_START}/${Types.COMP_VS_COMP}`);
+      navigate(`${Paths.GAME_START}/${Variables.COMP_VS_COMP.type}`);
     }
   };
   return (
