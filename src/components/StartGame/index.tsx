@@ -94,7 +94,7 @@ const StartGame: FC = () => {
               ? Variables.COMP_VS_COMP.players.play1
               : Variables.PLAYER_VS_COMP.players.play1}
           </Header>
-          <Text>
+          <Text data-testid="firstValue">
             {isCompPlay
               ? choices.firstValue
                 ? `Selected Choice: ${choices.firstValue}`
@@ -109,6 +109,7 @@ const StartGame: FC = () => {
                 <OptionsCard
                   key={idx}
                   id={Options[val]}
+                  data-testid={`firstValue-${Options[val]}`}
                   onClick={(e) =>
                     !isCompPlay &&
                     !choices.firstValue &&
@@ -133,7 +134,7 @@ const StartGame: FC = () => {
               ? Variables.COMP_VS_COMP.players.play2
               : Variables.PLAYER_VS_COMP.players.play2}
           </Header>
-          <Text>
+          <Text data-testid="secondValue">
             {choices.secondValue
               ? `Selected Choice: ${choices.secondValue}`
               : "Choice will be auto selected"}
@@ -144,6 +145,7 @@ const StartGame: FC = () => {
                 <OptionsCard
                   key={idx}
                   id={Options[val]}
+                  data-testid={`secondValue-${Options[val]}`}
                   style={{ opacity: "0.2" }}
                 >
                   {val}

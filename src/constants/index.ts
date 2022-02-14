@@ -20,9 +20,9 @@ export const Variables = {
   },
 };
 
-export const Options = {
-  ROCK: "ROCK",
-  PAPER: "PAPER",
-  SCISSOR: "SCISSOR",
-  PENCIL: "PENCIL",
-};
+export enum Options {
+  ROCK = "ROCK",
+  PAPER = "PAPER",
+  SCISSOR = "SCISSOR",
+  PENCIL = "PENCIL",
+}
