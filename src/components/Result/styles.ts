@@ -22,6 +22,10 @@ export const ModalDialog = styled.div`
   transform: translateY(-50%);
   margin: auto;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+
+  @media screen and (max-width: 480px) {
+    width: 270px;
+  }
 `;
 
 export const ModalBody = styled.div`

@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   margin: 20px;
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+  }
 `;
 
 export const Card = styled.div`

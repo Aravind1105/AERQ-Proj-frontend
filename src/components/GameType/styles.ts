@@ -7,6 +7,7 @@ export const Header = styled.h3`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 20px;
 `;
 
 export const Button = styled.button`
