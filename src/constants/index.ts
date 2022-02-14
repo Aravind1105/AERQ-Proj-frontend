@@ -1,3 +1,10 @@
+export enum Options {
+  ROCK = "ROCK",
+  PAPER = "PAPER",
+  SCISSOR = "SCISSOR",
+  PENCIL = "PENCIL",
+}
+
 export const Paths = {
   GAME_TYPE: "/game/type",
   GAME_START: "/game/start",
@@ -19,10 +26,3 @@ export const Variables = {
     },
   },
 };
-
-export enum Options {
-  ROCK = "ROCK",
-  PAPER = "PAPER",
-  SCISSOR = "SCISSOR",
-  PENCIL = "PENCIL",
-}

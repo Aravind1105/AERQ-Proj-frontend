@@ -1,7 +1,6 @@
 import React, { FC } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Paths, Variables } from "../../constants";
-import { GameParams } from "../GameType/type.interface";
 
 import {
   Modal,
@@ -17,6 +16,7 @@ type ResultProps = {
   winner: string;
   firstValue: string;
   secondValue: string;
+  isCompPlay: boolean;
   onRetry: () => void;
 };
 
@@ -24,9 +24,9 @@ const Result: FC<ResultProps> = ({
   winner,
   firstValue,
   secondValue,
+  isCompPlay,
   onRetry,
 }) => {
-  const { type } = useParams<GameParams>();
   const navigate = useNavigate();
 
   return (
@@ -35,13 +35,13 @@ const Result: FC<ResultProps> = ({
         <ModalHeader>Result</ModalHeader>
         <ModalBody>
           <Text>
-            {Variables.COMP_VS_COMP.type === type
+            {isCompPlay
               ? Variables.COMP_VS_COMP.players.play1
               : Variables.PLAYER_VS_COMP.players.play1}
             : {firstValue}
           </Text>
           <Text>
-            {Variables.COMP_VS_COMP.type === type
+            {isCompPlay
               ? Variables.COMP_VS_COMP.players.play2
               : Variables.PLAYER_VS_COMP.players.play2}
             : {secondValue}

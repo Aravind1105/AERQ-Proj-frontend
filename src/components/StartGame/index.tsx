@@ -12,17 +12,21 @@ import {
 } from "./styles";
 import { Options, Variables } from "../../constants";
 import { gameResult } from "../../services/query";
-import { ResultResponse } from "./result.interface";
+import { ResultResponse } from "../../interfaces/result.interface";
 import Result from "../Result";
-import { GameParams } from "../GameType/type.interface";
 
 type choiceProps = {
   firstValue: string;
   secondValue: string;
 };
 
+type GameParams = {
+  type: string;
+};
+
 const StartGame: FC = () => {
   const { type } = useParams<GameParams>();
+  // isCompPlay variable results whether game invloves the player or only the computer.
   const [isCompPlay] = useState<boolean>(
     Variables.COMP_VS_COMP.type === type ? true : false
   );
@@ -51,11 +55,13 @@ const StartGame: FC = () => {
 
   useEffect(() => {
     if (!isCompPlay && choices.firstValue && !choices.secondValue) {
+      // value is generated for Computer in Player vs Comp game.
       autoGenerate(choices.firstValue, choices.secondValue);
     }
   }, [isCompPlay, choices]);
 
   const startGame = () => {
+    // values are auto-generated for Comp vs Comp game.
     autoGenerate(choices.firstValue, choices.secondValue);
   };
 
@@ -68,6 +74,7 @@ const StartGame: FC = () => {
   };
 
   const fetchResult = async () => {
+    // API call to the backend to find the winner of this game.
     const response: ResultResponse = await gameResult(
       choices.firstValue,
       choices.secondValue
@@ -178,6 +185,7 @@ const StartGame: FC = () => {
           winner={result}
           firstValue={choices.firstValue}
           secondValue={choices.secondValue}
+          isCompPlay={isCompPlay}
           onRetry={onRetry}
         />
       )}

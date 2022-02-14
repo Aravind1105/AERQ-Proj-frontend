@@ -1,4 +1,4 @@
-import { ResultResponse } from "../components/StartGame/result.interface";
+import { ResultResponse } from "../interfaces/result.interface";
 import { get } from "../libs/get";
 import { urlBuilder } from "./urlBuilder";
 
@@ -6,6 +6,7 @@ export const gameResult = async (
   firstValue: string,
   secondValue: string
 ): Promise<ResultResponse> => {
+  //URL Builder to find the game result.
   const url: string = new urlBuilder()
     .path("api/getResult")
     .param("play1", firstValue)
