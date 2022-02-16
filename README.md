@@ -8,7 +8,8 @@ ROCK, PAPER, SCISSOR, PENCIL - Current Options configured in frontend and backen
 
 Please go through the rules in the backend before you start the game here.
 
-For new Options, Please add it in src/constants/index.ts file. Also, add the rule for the new option in the backend.
+For new Options, Please add it in src/constants/index.ts file and also add the rule definition(Optional).
+And, Eventually add the rule for the new option in the backend.
 
 ## Available Scripts
 
