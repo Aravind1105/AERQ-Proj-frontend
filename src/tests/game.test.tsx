@@ -1,6 +1,6 @@
 import React from "react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { Paths, Variables } from "../constants";
 import StartGame from "../components/StartGame";
 import App from "../App";
@@ -53,18 +53,5 @@ describe("Game - test cases", () => {
 
     expect(screen.getByText(/Fetch Result/i));
     fireEvent.click(submitBtn);
-
-    // const btn1 = await waitFor(() =>
-    //   screen.getByRole("button", {
-    //     name: /Retry/i,
-    //   })
-    // );
-    // const btn2 = await waitFor(() =>
-    //   screen.getByRole("button", {
-    //     name: /Menu/i,
-    //   })
-    // );
-    // expect(btn1).toBeInTheDocument();
-    // expect(btn2).toBeInTheDocument();
   });
 });
