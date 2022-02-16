@@ -4,7 +4,6 @@ export enum Options {
   PAPER = "PAPER",
   SCISSOR = "SCISSOR",
   PENCIL = "PENCIL",
-  ALMOND = "ALMOND",
 }
 
 export const RuleDefinitions = {
