@@ -63,3 +63,8 @@ export const Button = styled.button`
 export const MainText = styled.div`
   margin: 10px;
 `;
+
+export const Description = styled.div`
+  margin: 10px;
+  font-size: 15px;
+`;

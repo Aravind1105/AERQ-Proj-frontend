@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
-import { Paths, Variables } from "../../constants";
+import { Paths, RuleDefinitions, Variables } from "../../constants";
 
 import {
   Modal,
@@ -10,6 +10,7 @@ import {
   Text,
   Button,
   MainText,
+  Description,
 } from "./styles";
 
 type ResultProps = {
@@ -52,9 +53,18 @@ const Result: FC<ResultProps> = ({
             ) : (
               <>
                 <b>{winner}</b> is the Winner !!!
+                <br />
               </>
             )}
           </MainText>
+          <Description>
+            {firstValue !== secondValue &&
+              RuleDefinitions[firstValue] &&
+              RuleDefinitions[secondValue] &&
+              "Because " +
+                (RuleDefinitions[firstValue]?.[secondValue] ||
+                  RuleDefinitions[secondValue]?.[firstValue])}
+          </Description>
           <Button onClick={onRetry}>Retry Game</Button>
           <Button onClick={() => navigate(`${Paths.GAME_TYPE}`)}>
             Main Menu

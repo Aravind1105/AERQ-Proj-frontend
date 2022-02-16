@@ -23,8 +23,9 @@ export const OptionsCard = styled.div`
   border-radius: 10px;
   text-align: center;
   flex: 25%;
-  cursor: pointer;
-  opacity: ${({ defaultValue }) => (defaultValue ? "0.5" : "1")};
+  cursor: ${({ isCompPlay, value }) =>
+    isCompPlay || value ? "default" : "pointer"};
+  opacity: ${({ isCompPlay, value }) => (isCompPlay || value ? "0.3" : "1")};
 `;
 
 export const Header = styled.h3`

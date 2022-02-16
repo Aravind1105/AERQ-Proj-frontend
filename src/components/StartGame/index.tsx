@@ -23,6 +23,12 @@ type choiceProps = {
 type GameParams = {
   type: string;
 };
+declare module "react" {
+  interface HTMLAttributes<T> {
+    readonly isCompPlay?: boolean;
+    readonly value?: string;
+  }
+}
 
 const StartGame: FC = () => {
   const { type } = useParams<GameParams>();
@@ -125,9 +131,8 @@ const StartGame: FC = () => {
                       firstValue: (e.target as Element).id,
                     })
                   }
-                  style={{
-                    opacity: isCompPlay || choices.firstValue ? "0.2" : "1",
-                  }}
+                  isCompPlay={isCompPlay}
+                  value={choices.firstValue}
                 >
                   {val}
                 </OptionsCard>
@@ -153,7 +158,7 @@ const StartGame: FC = () => {
                   key={idx}
                   id={Options[val]}
                   data-testid={`secondValue-${Options[val]}`}
-                  style={{ opacity: "0.2" }}
+                  isCompPlay={true}
                 >
                   {val}
                 </OptionsCard>
