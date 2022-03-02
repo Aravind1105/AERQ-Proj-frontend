@@ -61,9 +61,8 @@ const Result: FC<ResultProps> = ({
             {firstValue !== secondValue &&
               RuleDefinitions[firstValue] &&
               RuleDefinitions[secondValue] &&
-              "Because " +
-                (RuleDefinitions[firstValue]?.[secondValue] ||
-                  RuleDefinitions[secondValue]?.[firstValue])}
+              (RuleDefinitions[firstValue]?.[secondValue] ||
+                RuleDefinitions[secondValue]?.[firstValue])}
           </Description>
           <Button onClick={onRetry}>Retry Game</Button>
           <Button onClick={() => navigate(`${Paths.GAME_TYPE}`)}>

@@ -9,18 +9,18 @@ export enum Options {
 export const RuleDefinitions = {
   // add rule definitions here for new options
   [Options.ROCK]: {
-    [Options.SCISSOR]: `${Options.ROCK} makes the ${Options.SCISSOR} dull`,
-    [Options.PENCIL]: `${Options.ROCK} breaks ${Options.PENCIL}`,
+    [Options.SCISSOR]: `Because ${Options.ROCK} makes the ${Options.SCISSOR} dull`,
+    [Options.PENCIL]: `Because ${Options.ROCK} breaks ${Options.PENCIL}`,
   },
   [Options.SCISSOR]: {
-    [Options.PENCIL]: `${Options.SCISSOR} makes the ${Options.PENCIL} dull`,
-    [Options.PAPER]: `${Options.SCISSOR} cuts ${Options.PAPER}`,
+    [Options.PENCIL]: `Because ${Options.SCISSOR} makes the ${Options.PENCIL} dull`,
+    [Options.PAPER]: `Because ${Options.SCISSOR} cuts ${Options.PAPER}`,
   },
   [Options.PENCIL]: {
-    [Options.PAPER]: `${Options.PENCIL} writes on ${Options.PAPER}`,
+    [Options.PAPER]: `Because ${Options.PENCIL} writes on ${Options.PAPER}`,
   },
   [Options.PAPER]: {
-    [Options.ROCK]: `${Options.PAPER} wraps around ${Options.ROCK}`,
+    [Options.ROCK]: `Because ${Options.PAPER} wraps around ${Options.ROCK}`,
   },
 };
 
