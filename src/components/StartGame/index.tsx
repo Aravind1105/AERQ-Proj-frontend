@@ -33,9 +33,7 @@ declare module "react" {
 const StartGame: FC = () => {
   const { type } = useParams<GameParams>();
   // isCompPlay variable results whether game invloves the player or only the computer.
-  const [isCompPlay] = useState<boolean>(
-    Variables.COMP_VS_COMP.type === type ? true : false
-  );
+  const [isCompPlay] = useState<boolean>(Variables.COMP_VS_COMP.type === type);
   const [choices, setChoices] = useState<choiceProps>({
     firstValue: "",
     secondValue: "",
@@ -99,7 +97,7 @@ const StartGame: FC = () => {
   };
 
   return (
-    <Fragment>
+    <>
       <Container>
         <Card>
           <Header>
@@ -194,7 +192,7 @@ const StartGame: FC = () => {
           onRetry={onRetry}
         />
       )}
-    </Fragment>
+    </>
   );
 };
 
